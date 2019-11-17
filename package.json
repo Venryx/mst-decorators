@@ -9,7 +9,7 @@
     "prepack": "yarn clean && yarn cjs && yarn esm",
     "cjs": "babel --out-dir cjs src",
     "esm": "ESM=1 babel --out-dir esm src",
-    "clean": "rm -rf cjs esm",
+    "clean": "shx rm -rf cjs esm",
     "test": "nyc mocha",
     "cover": "nyc report --reporter=text-lcov | coveralls"
   },
@@ -41,6 +41,7 @@
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
     "should": "^13.2.3",
+    "shx": "^0.3.2",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
   },
