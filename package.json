@@ -8,7 +8,7 @@
   "scripts": {
     "prepack": "yarn clean && yarn cjs && yarn esm",
     "cjs": "babel --out-dir cjs src",
-    "esm": "ESM=1 babel --out-dir esm src",
+    "esm": "cross-env ESM=1 babel --out-dir esm src",
     "clean": "shx rm -rf cjs esm",
     "test": "nyc mocha",
     "cover": "nyc report --reporter=text-lcov | coveralls"
@@ -36,6 +36,7 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.5",
     "coveralls": "^3.0.6",
+    "cross-env": "^6.0.3",
     "mobx": "^5.13.0",
     "mobx-state-tree": "^3.14.1",
     "mocha": "^6.2.0",
